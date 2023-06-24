@@ -44,100 +44,99 @@ function AddVendor({ email, setFlag}) {
   
     return (
       <div className={styles.addVendor}>
-  <h2>Add Vendor</h2>
-  <form onSubmit={handleAddVendor}>
-    <div className={styles.formGroup}>
-      <label htmlFor="vendorName">Vendor Name:</label>
-      <input
-        type="text"
-        id="vendorName"
-        name="vendorName"
-        value={vendorData.vendorName}
-        onChange={handleInputChange}
-        className={styles.inputField}
-      />
+      <h2>Add Vendor</h2>
+      <form onSubmit={handleAddVendor} className={styles.form}>
+        <div className={styles.formGroup}>
+          <label htmlFor="vendorName">Vendor Name:</label>
+          <input
+            type="text"
+            id="vendorName"
+            name="vendorName"
+            value={vendorData.vendorName}
+            onChange={handleInputChange}
+            className={styles.inputField}
+          />
+        </div>
+        <div className={styles.formGroup}>
+          <label htmlFor="bankAccountNo">Bank Account No:</label>
+          <input
+            type="text"
+            id="bankAccountNo"
+            name="bankAccountNo"
+            value={vendorData.bankAccountNo}
+            onChange={handleInputChange}
+            className={styles.inputField}
+          />
+        </div>
+        <div className={styles.formGroup}>
+          <label htmlFor="bankName">Bank Name:</label>
+          <input
+            type="text"
+            id="bankName"
+            name="bankName"
+            value={vendorData.bankName}
+            onChange={handleInputChange}
+            className={styles.inputField}
+          />
+        </div>
+        <div className={styles.formGroup}>
+          <label htmlFor="addressLine1">Address Line 1:</label>
+          <input
+            type="text"
+            id="addressLine1"
+            name="addressLine1"
+            value={vendorData.addressLine1}
+            onChange={handleInputChange}
+            className={styles.inputField}
+          />
+        </div>
+        <div className={styles.formGroup}>
+          <label htmlFor="addressLine2">Address Line 2:</label>
+          <input
+            type="text"
+            id="addressLine2"
+            name="addressLine2"
+            value={vendorData.addressLine2}
+            onChange={handleInputChange}
+            className={styles.inputField}
+          />
+        </div>
+        <div className={styles.formGroup}>
+          <label htmlFor="city">City:</label>
+          <input
+            type="text"
+            id="city"
+            name="city"
+            value={vendorData.city}
+            onChange={handleInputChange}
+            className={styles.inputField}
+          />
+        </div>
+        <div className={styles.formGroup}>
+          <label htmlFor="country">Country:</label>
+          <input
+            type="text"
+            id="country"
+            name="country"
+            value={vendorData.country}
+            onChange={handleInputChange}
+            className={styles.inputField}
+          />
+        </div>
+        <div className={styles.formGroup}>
+          <label htmlFor="zipCode">Zip Code:</label>
+          <input
+            type="text"
+            id="zipCode"
+            name="zipCode"
+            value={vendorData.zipCode}
+            onChange={handleInputChange}
+            className={styles.inputField}
+          />
+        </div>
+        <button className={styles.addVendorBtn} type="submit">Add Vendor</button>
+      </form>
     </div>
-    <div className={styles.formGroup}>
-      <label htmlFor="bankAccountNo">Bank Account No:</label>
-      <input
-        type="text"
-        id="bankAccountNo"
-        name="bankAccountNo"
-        value={vendorData.bankAccountNo}
-        onChange={handleInputChange}
-        className={styles.inputField}
-      />
-    </div>
-    <div className={styles.formGroup}>
-      <label htmlFor="bankName">Bank Name:</label>
-      <input
-        type="text"
-        id="bankName"
-        name="bankName"
-        value={vendorData.bankName}
-        onChange={handleInputChange}
-        className={styles.inputField}
-      />
-    </div>
-    <div className={styles.formGroup}>
-      <label htmlFor="addressLine1">Address Line 1:</label>
-      <input
-        type="text"
-        id="addressLine1"
-        name="addressLine1"
-        value={vendorData.addressLine1}
-        onChange={handleInputChange}
-        className={styles.inputField}
-      />
-    </div>
-    <div className={styles.formGroup}>
-      <label htmlFor="addressLine2">Address Line 2:</label>
-      <input
-        type="text"
-        id="addressLine2"
-        name="addressLine2"
-        value={vendorData.addressLine2}
-        onChange={handleInputChange}
-        className={styles.inputField}
-      />
-    </div>
-    <div className={styles.formGroup}>
-      <label htmlFor="city">City:</label>
-      <input
-        type="text"
-        id="city"
-        name="city"
-        value={vendorData.city}
-        onChange={handleInputChange}
-        className={styles.inputField}
-      />
-    </div>
-    <div className={styles.formGroup}>
-      <label htmlFor="country">Country:</label>
-      <input
-        type="text"
-        id="country"
-        name="country"
-        value={vendorData.country}
-        onChange={handleInputChange}
-        className={styles.inputField}
-      />
-    </div>
-    <div className={styles.formGroup}>
-      <label htmlFor="zipCode">Zip Code:</label>
-      <input
-        type="text"
-        id="zipCode"
-        name="zipCode"
-        value={vendorData.zipCode}
-        onChange={handleInputChange}
-        className={styles.inputField}
-      />
-    </div>
-    <button className={styles.addVendorBtn} type="submit">Add Vendor</button>
-  </form>
-</div>
-
     );
   }
   

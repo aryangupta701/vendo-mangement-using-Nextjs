@@ -21,19 +21,19 @@ function Dashboard({ user }) {
     fetchData();
   }, [flag])
 
-  const vendors = userData.vendors || []
+  const vendors = userData?.vendors || []
 
   return (
     <div className={styles.dashboard}>
       <h1>Welcome to the Dashboard</h1>
-      <img className={styles.profileImage} src={userData.image} alt="Profile" />
-      <p className={styles.userInfo}>Name: {userData.name}</p>
-      <p className={styles.userInfo}>Email: {userData.email}</p>
+      <img className={styles.profileImage} src={userData?.image} alt="Profile" />
+      <p className={styles.userInfo}>Name: {userData?.name}</p>
+      <p className={styles.userInfo}>Email: {userData?.email}</p>
       <button className={styles.logoutBtn} onClick={handleLogout}>
         Logout
       </button>
-      <AddVendor email={userData.email} setFlag={setFlag} />
-      <Vendors vendors={vendors} email={userData.email} setFlag={setFlag} />
+      <AddVendor email={userData?.email} setFlag={setFlag} />
+      <Vendors vendors={vendors} email={userData?.email} setFlag={setFlag} />
     </div>
   );
 }

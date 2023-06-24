@@ -3,28 +3,30 @@
   }
   
   .addVendor h2 {
-    font-size: 20px;
+    font-size: 24px;
     margin-bottom: 20px;
   }
   
-  .addVendor form {
+  .addVendor .form {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 15px;
+  }
+  
+  .addVendor .formGroup {
     display: flex;
     flex-direction: column;
   }
   
-  .addVendor .formGroup {
-    margin-bottom: 15px;
-  }
-  
   .addVendor label {
     font-weight: bold;
+    margin-bottom: 5px;
   }
   
   .addVendor .inputField {
-    width: 100%;
-    padding: 8px;
-    border-radius: 4px;
+    padding: 10px;
     border: 1px solid #ccc;
+    border-radius: 4px;
   }
   
   .addVendorBtn {
@@ -37,6 +39,7 @@
     border-radius: 4px;
     cursor: pointer;
     transition: background-color 0.3s ease;
+    grid-column: 1 / -1;
   }
   
   .addVendorBtn:hover {
