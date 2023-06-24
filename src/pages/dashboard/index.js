@@ -59,7 +59,7 @@ async function getUserData(user) {
   };
   
   try {
-    const response = await axios.post('http://localhost:3000/api/user', requestBody);
+    const response = await axios.post('https://vendor-management-using-nextjs.vercel.app/api/user', requestBody);
     const userData = response.data;
     return userData; 
   } catch (error) {

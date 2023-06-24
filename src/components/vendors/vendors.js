@@ -50,7 +50,7 @@ function Vendors({ vendors, email, setFlag }) {
       country: '',
       zipCode: '',
     });
-    await axios.post('http://localhost:3000/api/updateVendor', requestBody);
+    await axios.post('https://vendor-management-using-nextjs.vercel.app/api/updateVendor', requestBody);
     setFlag(prev => !prev); 
   };
 
@@ -60,7 +60,7 @@ function Vendors({ vendors, email, setFlag }) {
 
   const handleDelete = async (vendorId) => {
     // Implement your delete logic here
-    await axios.post('http://localhost:3000/api/deleteVendor', {vendorId, email}); 
+    await axios.post('https://vendor-management-using-nextjs.vercel.app/api/deleteVendor', {vendorId, email}); 
     setFlag(prev => !prev); 
   };
 

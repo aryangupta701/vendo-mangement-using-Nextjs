@@ -38,7 +38,7 @@ function AddVendor({ email, setFlag}) {
         email, 
         vendor: vendorData
       }
-      await axios.post('http://localhost:3000/api/addVendor', requestBody);
+      await axios.post('https://vendor-management-using-nextjs.vercel.app/api/addVendor', requestBody);
       setFlag(prev => !prev); 
     };
   
