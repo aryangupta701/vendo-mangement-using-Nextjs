@@ -1,4 +1,4 @@
-import { getSession, signOut } from 'next-auth/client';
+import { getSession, signOut } from 'next-auth/react';
 
 function Dashboard() {
   const handleLogout = () => {
@@ -15,16 +15,16 @@ function Dashboard() {
 
 export async function getServerSideProps(context) {
   const session = await getSession(context);
-
   if (!session) {
     return {
       redirect: {
-        destination: '/',
+        destination: '/login',
         permanent: false,
       },
     };
   }
-
+  const user = session.user; 
+  
   return {
     props: {},
   };
