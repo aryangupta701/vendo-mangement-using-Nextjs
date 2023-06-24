@@ -5,16 +5,20 @@ import AddVendor from '../../components/vendors/add'
 import {  useEffect, useState } from 'react';
 
 function Dashboard({ user }) {
-  const [state, setState] = useState(true); 
+  const [flag, setFlag] = useState(true); 
   const [userData, setUserData] = useState({})
   const handleLogout = () => {
     signOut();
   };
 
-  useEffect(async()=>{
-    const data = await getUserData(user); 
-    setUserData(data); 
-  }, [state])
+  useEffect(()=>{
+    const fetchData = async () => {
+      const data = await getUserData(user);
+      setUserData(data);
+    };
+  
+    fetchData();
+  }, [flag])
 
   const vendors = userData.vendors || []
 
@@ -25,8 +29,8 @@ function Dashboard({ user }) {
       <p>Name: {userData.name}</p>
       <p>Email: {userData.email}</p>
       <button onClick={handleLogout}>Logout</button>
-      <AddVendor email={userData.email} setState={setState}/>
-      <Vendors vendors={vendors} email={userData.email} setState={setState}/> 
+      <AddVendor email={userData.email} setFlag={setFlag}/>
+      <Vendors vendors={vendors} email={userData.email} setFlag={setFlag}/> 
     </div>
   );
 }
@@ -57,6 +61,7 @@ async function getUserData(user) {
     return userData; 
   } catch (error) {
     console.error(error.message);
+    return null;
   }
 }
 

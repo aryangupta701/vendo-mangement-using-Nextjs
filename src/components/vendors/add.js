@@ -1,7 +1,7 @@
 import axios from 'axios';
 import { useState } from 'react';
 
-function AddVendor({ email, setState}) {
+function AddVendor({ email, setFlag}) {
     const [vendorData, setVendorData] = useState({
       vendorName: '',
       bankAccountNo: '',
@@ -38,7 +38,7 @@ function AddVendor({ email, setState}) {
         vendor: vendorData
       }
       await axios.post('http://localhost:3000/api/addVendor', requestBody);
-      setState(prev => !prev); 
+      setFlag(prev => !prev); 
     };
   
     return (

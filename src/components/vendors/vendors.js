@@ -1,7 +1,7 @@
 import axios from 'axios';
 import { useState } from 'react';
 
-function Vendors({ vendors, email }) {
+function Vendors({ vendors, email, setFlag }) {
   const [currentPage, setCurrentPage] = useState(1);
   const [editVendor, setEditVendor]  = useState(null); 
   const itemsPerPage = 5; 
@@ -50,7 +50,7 @@ function Vendors({ vendors, email }) {
       zipCode: '',
     });
     await axios.post('http://localhost:3000/api/updateVendor', requestBody);
-    setState(prev => !prev); 
+    setFlag(prev => !prev); 
   };
 
   const handlePageChange = (pageNumber) => {
@@ -60,7 +60,7 @@ function Vendors({ vendors, email }) {
   const handleDelete = async (vendorId) => {
     // Implement your delete logic here
     await axios.post('http://localhost:3000/api/deleteVendor', {vendorId, email}); 
-    setState(prev => !prev); 
+    setFlag(prev => !prev); 
   };
 
   // Handle vendor editing
