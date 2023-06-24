@@ -2,7 +2,7 @@
 
 import React from 'react';
 import { useRouter } from 'next/navigation';
-import './home.module.css';
+import styles from './home.module.css';
 
 function HomePage() {
   const router = useRouter();
@@ -13,9 +13,11 @@ function HomePage() {
 
   return (
     <div>
+      <div className={styles.container}>
       <h1>Welcome to the Vendor Portal</h1>
-      <div className='container'>
-        <button className="continue-btn" onClick={handleClick}>
+      </div>
+      <div className={styles.container}>
+        <button className={styles['continue-btn']} onClick={handleClick}>
           Click Here to Continue
         </button>
       </div>

@@ -1,0 +1,55 @@
+.addVendor {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .addVendor h2 {
+    font-size: 20px;
+    margin-bottom: 20px;
+  }
+  
+  .addVendor form {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-bottom: 20px;
+  }
+  
+  .addVendor label {
+    margin-bottom: 10px;
+  }
+  
+  .addVendor input {
+    width: 300px;
+    padding: 8px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+  }
+  
+  .addVendorBtn {
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+    text-decoration: none;
+    background-color: #ff5a5f;
+    color: #ffffff;
+    border-radius: 4px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .addVendorBtn:hover {
+    background-color: #ff4045;
+  }
+  
+  .addVendorBtn:focus {
+    outline: none;
+  }
+  
+  .addVendorBtn:active {
+    background-color: #ff282d;
+  }
+  

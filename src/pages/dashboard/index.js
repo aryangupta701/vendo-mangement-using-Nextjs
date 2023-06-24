@@ -3,6 +3,7 @@ import { getSession, signOut } from 'next-auth/react';
 import Vendors from '../../components/vendors/vendors'
 import AddVendor from '../../components/vendors/add'
 import {  useEffect, useState } from 'react';
+import styles from './dashboard.module.css';
 
 function Dashboard({ user }) {
   const [flag, setFlag] = useState(true); 
@@ -23,14 +24,16 @@ function Dashboard({ user }) {
   const vendors = userData.vendors || []
 
   return (
-    <div>
+    <div className={styles.dashboard}>
       <h1>Welcome to the Dashboard</h1>
-      <img src={userData.image}></img>
-      <p>Name: {userData.name}</p>
-      <p>Email: {userData.email}</p>
-      <button onClick={handleLogout}>Logout</button>
-      <AddVendor email={userData.email} setFlag={setFlag}/>
-      <Vendors vendors={vendors} email={userData.email} setFlag={setFlag}/> 
+      <img className={styles.profileImage} src={userData.image} alt="Profile" />
+      <p className={styles.userInfo}>Name: {userData.name}</p>
+      <p className={styles.userInfo}>Email: {userData.email}</p>
+      <button className={styles.logoutBtn} onClick={handleLogout}>
+        Logout
+      </button>
+      <AddVendor email={userData.email} setFlag={setFlag} />
+      <Vendors vendors={vendors} email={userData.email} setFlag={setFlag} />
     </div>
   );
 }

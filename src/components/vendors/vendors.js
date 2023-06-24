@@ -1,5 +1,6 @@
 import axios from 'axios';
 import { useState } from 'react';
+import styles from './vendors.module.css'
 
 function Vendors({ vendors, email, setFlag }) {
   const [currentPage, setCurrentPage] = useState(1);
@@ -81,102 +82,102 @@ function Vendors({ vendors, email, setFlag }) {
   };
 
   return (
-    <div>
+    <div className={styles.vendors}>
       <h2>Vendors</h2>
       {currentVendors.length === 0 && <p>No Vendors Added</p>}
-{currentVendors.map((vendor) => (
-  <div key={vendor.vendorId}>
-    {editVendor && editVendor === vendor.vendorId ? (
-     <form onSubmit={handleUpdate}>
-     <label>
-       Vendor Name:
-       <input
-         type="text"
-         name="vendorName"
-         value={vendorData.vendorName}
-         onChange={handleInputChange}
-       />
-     </label>
-     <label>
-       Bank Account No:
-       <input
-         type="text"
-         name="bankAccountNo"
-         value={vendorData.bankAccountNo}
-         onChange={handleInputChange}
-       />
-     </label>
-     <label>
-       Bank Name:
-       <input
-         type="text"
-         name="bankName"
-         value={vendorData.bankName}
-         onChange={handleInputChange}
-       />
-     </label>
-     <label>
-       Address Line 1:
-       <input
-         type="text"
-         name="addressLine1"
-         value={vendorData.addressLine1}
-         onChange={handleInputChange}
-       />
-     </label>
-     <label>
-       Address Line 2:
-       <input
-         type="text"
-         name="addressLine2"
-         value={vendorData.addressLine2}
-         onChange={handleInputChange}
-       />
-     </label>
-     <label>
-       City:
-       <input
-         type="text"
-         name="city"
-         value={vendorData.city}
-         onChange={handleInputChange}
-       />
-     </label>
-     <label>
-       Country:
-       <input
-         type="text"
-         name="country"
-         value={vendorData.country}
-         onChange={handleInputChange}
-       />
-     </label>
-     <label>
-       Zip Code:
-       <input
-         type="text"
-         name="zipCode"
-         value={vendorData.zipCode}
-         onChange={handleInputChange}
-       />
-     </label>
-     <button type="submit">Save</button>
-   </form>
-    ) : (
-      <>
-        <p>Vendor Name: {vendor.vendorName}</p>
-        <p>Bank Account No: {vendor.bankAccountNo}</p>
-        <p>Bank Name: {vendor.bankName}</p>
-        <p>Address: {vendor.addressLine1}</p>
-        <p>City: {vendor.city}</p>
-        <p>Country: {vendor.country}</p>
-        <p>Zip Code: {vendor.zipCode}</p>
-        <button onClick={() => handleDelete(vendor.vendorId)}>Delete</button>
-        <button onClick={() => handleEdit(vendor)}>Edit</button>
-      </>
-    )}
-  </div>
-))}
+      {currentVendors.map((vendor) => (
+        <div key={vendor.vendorId}>
+          {editVendor && editVendor === vendor.vendorId ? (
+            <form onSubmit={handleUpdate}>
+              <label>
+                Vendor Name:
+                <input
+                  type="text"
+                  name="vendorName"
+                  value={vendorData.vendorName}
+                  onChange={handleInputChange}
+                />
+              </label>
+              <label>
+                Bank Account No:
+                <input
+                  type="text"
+                  name="bankAccountNo"
+                  value={vendorData.bankAccountNo}
+                  onChange={handleInputChange}
+                />
+              </label>
+              <label>
+                Bank Name:
+                <input
+                  type="text"
+                  name="bankName"
+                  value={vendorData.bankName}
+                  onChange={handleInputChange}
+                />
+              </label>
+              <label>
+                Address Line 1:
+                <input
+                  type="text"
+                  name="addressLine1"
+                  value={vendorData.addressLine1}
+                  onChange={handleInputChange}
+                />
+              </label>
+              <label>
+                Address Line 2:
+                <input
+                  type="text"
+                  name="addressLine2"
+                  value={vendorData.addressLine2}
+                  onChange={handleInputChange}
+                />
+              </label>
+              <label>
+                City:
+                <input
+                  type="text"
+                  name="city"
+                  value={vendorData.city}
+                  onChange={handleInputChange}
+                />
+              </label>
+              <label>
+                Country:
+                <input
+                  type="text"
+                  name="country"
+                  value={vendorData.country}
+                  onChange={handleInputChange}
+                />
+              </label>
+              <label>
+                Zip Code:
+                <input
+                  type="text"
+                  name="zipCode"
+                  value={vendorData.zipCode}
+                  onChange={handleInputChange}
+                />
+              </label>
+              <button type="submit">Save</button>
+            </form>
+          ) : (
+            <>
+              <p>Vendor Name: {vendor.vendorName}</p>
+              <p>Bank Account No: {vendor.bankAccountNo}</p>
+              <p>Bank Name: {vendor.bankName}</p>
+              <p>Address: {vendor.addressLine1}</p>
+              <p>City: {vendor.city}</p>
+              <p>Country: {vendor.country}</p>
+              <p>Zip Code: {vendor.zipCode}</p>
+              <button onClick={() => handleDelete(vendor.vendorId)}>Delete</button>
+              <button onClick={() => handleEdit(vendor)}>Edit</button>
+            </>
+          )}
+        </div>
+      ))}
 
       {/* Pagination */}
       <div>
