@@ -1,5 +1,6 @@
 import { useSession, signIn } from 'next-auth/react';
 import { useRouter } from 'next/router';
+import styles from './login.module.css'; 
 
 function LoginSignup() {
     const handleLogin = () => {
@@ -12,10 +13,12 @@ function LoginSignup() {
         router.push('/dashboard'); 
     }
     else return (
-        <div>
+        <div className={styles.loginSignupPage}>
         <h1>Login/Signup Page</h1>
-        <button onClick={handleLogin}>Sign in with Google</button>
-        </div>
+        <button className={styles.googleSignInBtn} onClick={handleLogin}>
+          Sign in with Google
+        </button>
+      </div>
     );
 }
 

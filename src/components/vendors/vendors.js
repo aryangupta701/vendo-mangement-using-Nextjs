@@ -86,9 +86,9 @@ function Vendors({ vendors, email, setFlag }) {
       <h2>Vendors</h2>
       {currentVendors.length === 0 && <p>No Vendors Added</p>}
       {currentVendors.map((vendor) => (
-        <div key={vendor.vendorId}>
+        <div className={styles.vendor} key={vendor.vendorId}>
           {editVendor && editVendor === vendor.vendorId ? (
-            <form onSubmit={handleUpdate}>
+            <form className={styles.editForm} onSubmit={handleUpdate}>
               <label>
                 Vendor Name:
                 <input
@@ -161,38 +161,38 @@ function Vendors({ vendors, email, setFlag }) {
                   onChange={handleInputChange}
                 />
               </label>
-              <button type="submit">Save</button>
+              <button type="submit" className={styles.saveButton}>Save</button>
             </form>
           ) : (
-            <>
-              <p>Vendor Name: {vendor.vendorName}</p>
-              <p>Bank Account No: {vendor.bankAccountNo}</p>
-              <p>Bank Name: {vendor.bankName}</p>
-              <p>Address: {vendor.addressLine1}</p>
-              <p>City: {vendor.city}</p>
-              <p>Country: {vendor.country}</p>
-              <p>Zip Code: {vendor.zipCode}</p>
-              <button onClick={() => handleDelete(vendor.vendorId)}>Delete</button>
-              <button onClick={() => handleEdit(vendor)}>Edit</button>
-            </>
+            <div className={styles.vendorDetails}>
+              <p><strong>Vendor Name:</strong> {vendor.vendorName}</p>
+              <p><strong>Bank Account No:</strong> {vendor.bankAccountNo}</p>
+              <p><strong>Bank Name:</strong> {vendor.bankName}</p>
+              <p><strong>Address:</strong> {vendor.addressLine1}</p>
+              <p><strong>City:</strong> {vendor.city}</p>
+              <p><strong>Country:</strong> {vendor.country}</p>
+              <p><strong>Zip Code:</strong> {vendor.zipCode}</p>
+              <button onClick={() => handleDelete(vendor.vendorId)} className={styles.deleteButton}>Delete</button>
+              <button onClick={() => handleEdit(vendor)} className={styles.editButton}>Edit</button>
+            </div>
           )}
         </div>
       ))}
 
       {/* Pagination */}
-      <div>
-        {vendors.length > itemsPerPage && (
-          <ul>
+      {vendors.length > itemsPerPage && (
+        <div className={styles.pagination}>
+          <ul className={styles.pageList}>
             {Array(Math.ceil(vendors.length / itemsPerPage))
               .fill()
               .map((_, index) => (
-                <li key={index}>
-                  <button onClick={() => handlePageChange(index + 1)}>{index + 1}</button>
+                <li key={index} className={styles.pageItem}>
+                  <button onClick={() => handlePageChange(index + 1)} className={styles.pageButton}>{index + 1}</button>
                 </li>
               ))}
           </ul>
-        )}
-      </div>
+        </div>
+      )}
     </div>
   );
 }
