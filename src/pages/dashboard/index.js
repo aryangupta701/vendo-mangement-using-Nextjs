@@ -26,7 +26,7 @@ function Dashboard({ user }) {
   return (
     <div className={styles.dashboard}>
       <h1>Welcome to the Dashboard</h1>
-      <img className={styles.profileImage} src={userData?.image} alt="Profile" />
+      <img className={styles.profileImage} src={userData.image} alt="Profile" />
       <p className={styles.userInfo}>Name: {userData?.name}</p>
       <p className={styles.userInfo}>Email: {userData?.email}</p>
       <button className={styles.logoutBtn} onClick={handleLogout}>

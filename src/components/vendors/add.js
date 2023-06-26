@@ -41,9 +41,18 @@ function AddVendor({ email, setFlag}) {
       await axios.post('/api/addVendor', requestBody);
       setFlag(prev => !prev); 
     };
+
+    const handleAddVendors = async(e) => {
+      const requestBody = {
+        email
+      }
+      await axios.post('/api/addVendors', requestBody);
+      setFlag(prev => !prev); 
+    };
   
     return (
       <div className={styles.addVendor}>
+      <button className={styles.addVendorBtn} onClick={handleAddVendors}>Add 100 Vendors</button>
       <h2>Add Vendor</h2>
       <form onSubmit={handleAddVendor} className={styles.form}>
         <div className={styles.formGroup}>

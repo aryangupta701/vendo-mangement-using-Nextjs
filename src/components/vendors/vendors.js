@@ -59,10 +59,19 @@ function Vendors({ vendors, email, setFlag }) {
   };
 
   const handleDelete = async (vendorId) => {
-    // Implement your delete logic here
-    await axios.post('/api/deleteVendor', {vendorId, email}); 
-    setFlag(prev => !prev); 
+    const shouldDelete = window.confirm("Are you sure you want to delete this vendor?");
+    if (shouldDelete) {
+      try {
+        // Implement your delete logic here
+        await axios.post('/api/deleteVendor', {vendorId, email});
+        setFlag(prev => !prev);
+      } catch (error) {
+        // Handle error if the deletion fails
+        console.error(error);
+      }
+    }
   };
+  
 
   // Handle vendor editing
   const handleEdit = (vendor) => {

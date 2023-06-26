@@ -15,13 +15,13 @@ function userModel() {
   const vendorSchema = new Schema({
     vendorId : {type: String, required: true},
     vendorName: { type: String, required: true },
-    bankAccountNo: { type: String, required: true },
+    bankAccountNo: { type: Number, required: true },
     bankName: { type: String, required: true },
     addressLine1: { type: String, required: true },
     addressLine2: { type: String },
     city: { type: String, required: true },
     country: { type: String, required: true },
-    zipCode: { type: String, required: true }
+    zipCode: { type: Number, required: true }
   });
 
   const schema = new Schema({
